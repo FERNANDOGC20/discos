@@ -1,3 +1,4 @@
+var total=0;
 $(document).on('ready',inicia);
 //$(function(){
 //});
@@ -8,11 +9,9 @@ function inicia()
 function compra()
 {
 var nodo=$(this).parent().children().first().next().text();
-console.log(nodo);
-$('aside').append('<li>'+nodo+'<li>');
+$('aside').append('<li>'+nodo+'</li>');
 var precio=$(this).parent().children().first().next().next().next().text();
-
 precio=parseInt(precio);
-precio+=precio;
-$('div').append(precio);
+total=total+precio;
+$('div').html(total);
 }
